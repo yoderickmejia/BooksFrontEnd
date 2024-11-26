@@ -44,7 +44,7 @@ const BookView: React.FC<BookDetailsProps> = ({ book }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await axios.post(`${import.meta.env.VITE_API_URL}api/v1/reviews/new`, formData);
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/reviews/new`, formData);
       setFormData({
         bookId: book._id,
         userId: localStorage.getItem("userId") || "",
@@ -63,7 +63,7 @@ const BookView: React.FC<BookDetailsProps> = ({ book }) => {
     const userId = localStorage.getItem("userId") ;
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}api/v1/reviews/all/${userId}?`
+        `${import.meta.env.VITE_API_URL}/api/v1/reviews/all/${userId}?`
       );
       setReviews(response.data);
     } catch (error) {
@@ -76,7 +76,7 @@ const BookView: React.FC<BookDetailsProps> = ({ book }) => {
     fetchBooks();
   }, []);
 
-  const foto = `../../../public/Images/${book.coverImage}`;
+  const foto = `${import.meta.env.VITE_API_URL}/public/Images/${book.coverImage}`;
 
   return (
     <>
