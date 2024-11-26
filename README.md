@@ -10,3 +10,6 @@ Dependencias Instaladas
 •	tailwindcss: Framework de CSS para diseñar interfaces de usuario.
 •	@mui/material: Componentes de Material-UI para React.
 •	@mui/icons-material: Iconos de Material-UI para React.
+
+
+
