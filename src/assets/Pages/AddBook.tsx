@@ -77,7 +77,7 @@ const AddBook: React.FC = () => {
         const imageFormData = new FormData();
         imageFormData.append('image', imageFile);
 
-        const uploadRequest = axios.post(`${import.meta.env.VITE_API_URL}api/v1/Images/upload`, imageFormData, {
+        const uploadRequest = axios.post(`${import.meta.env.VITE_API_URL}/api/v1/Images/upload`, imageFormData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
