@@ -27,7 +27,7 @@ const MyBooks = () => {
    
     setLoading(true);
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/books/advancedSearch?`, {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}api/v1/books/advancedSearch?`, {
         params: {
           userId: localStorage.getItem('userId'),
           genre: searchGenre ,

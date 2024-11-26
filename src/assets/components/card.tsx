@@ -20,7 +20,7 @@ const ResponsiveCard: React.FC<{ book: Book }> = ({ book }) => {
   const [isFavorite, setIsFavorite] = useState(book.isFavorite);
 
   const handleDeleteClick = () => {
-    axios.delete(`${import.meta.env.VITE_API_URL}/api/v1/books/delete/${book._id}`)
+    axios.delete(`${import.meta.env.VITE_API_URL}api/v1/books/delete/${book._id}`)
       .then(() => {
         window.location.reload();
       })
@@ -31,7 +31,7 @@ const ResponsiveCard: React.FC<{ book: Book }> = ({ book }) => {
 
   const handleFavoriteClick = () => {
     setIsFavorite(!isFavorite);
-    axios.put(`${import.meta.env.VITE_API_URL}/api/v1/books/favorite/${book._id}`)
+    axios.put(`${import.meta.env.VITE_API_URL}api/v1/books/favorite/${book._id}`)
       .then(response => console.log(response))
       .catch(error => console.error("There was an error updating the favorite status!", error));
   };

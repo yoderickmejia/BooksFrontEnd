@@ -30,7 +30,7 @@ const SignUp = () => {
 
     try {
       // Llamada a la API para el registro
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/user/register`, {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}api/v1/user/register`, {
         username: formData.username,
         email: formData.email,
         password: formData.password,

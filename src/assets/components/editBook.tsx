@@ -36,7 +36,7 @@ const EditBook: React.FC = () => {
   useEffect(() => {
     const fetchBook = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/books/by-id/${bookId}`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}api/v1/books/by-id/${bookId}`);
         const book = response.data;
         setFormData({
           title: book.title,
@@ -93,7 +93,7 @@ const EditBook: React.FC = () => {
         const imageFormData = new FormData();
         imageFormData.append('image', imageFile);
 
-        const uploadResponse = await axios.post('http://localhost:3000/api/v1/Images/upload', imageFormData, {
+        const uploadResponse = await axios.post(`${import.meta.env.VITE_API_URL}api/v1/Images/upload`, imageFormData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
@@ -107,7 +107,7 @@ const EditBook: React.FC = () => {
         coverImage: coverImageUrl,
       };
 
-      await axios.put(`http://localhost:3000/api/v1/books/update/${bookId}`, bookData);
+      await axios.put(`${import.meta.env.VITE_API_URL}api/v1/books/update/${bookId}`, bookData);
       console.log('Libro actualizado:', bookData);
     } catch (error) {
       console.error('Error al actualizar el libro:', error);
