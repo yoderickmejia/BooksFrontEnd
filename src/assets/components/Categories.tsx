@@ -26,7 +26,7 @@ const Categories: React.FC<CategoriesProps> = ({ Category }) => {
 
     const fetchBooks = async (category: string, page: number) => {
         try {
-            const response = await axios.get(`${import.meta.env.VITE_API_URL}api/v1/books/categories`, {
+            const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/books/categories`, {
                 params: {
                     userId,
                     genre: category,
