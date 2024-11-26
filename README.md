@@ -13,3 +13,6 @@ Dependencias Instaladas
 
 
 
+Variables de entorno
+
+VITE_API_URL = https://booksbackend-0ga1.onrender.com/
